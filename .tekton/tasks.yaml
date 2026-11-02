@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cleanup
+spec:
+  steps:
+    - name: cleanup
+      image: alpine:latest
+      command: ["/bin/sh", "-c"]
+      args: ["echo Cleaning up workspace..."]
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: nose-test
+spec:
+  steps:
+    - name: run-nose-tests
+      image: python:3.9-slim
+      command: ["/bin/sh", "-c"]
+      args:
+        - |
+          pip install -r requirements.txt
+          nosetests
