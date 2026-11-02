@@ -3,20 +3,28 @@ kind: Task
 metadata:
   name: cleanup
 spec:
+  workspaces:
+    - name: source
   steps:
     - name: cleanup
       image: alpine:latest
       command: ["/bin/sh", "-c"]
-      args: ["echo Cleaning up workspace..."]
+      args:
+        - |
+          echo "Cleaning up workspace directory..."
+          rm -rf $(workspaces.source.path)/* $(workspaces.source.path)/.* 2>/dev/null || true
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: nose-test
 spec:
+  workspaces:
+    - name: source
   steps:
     - name: run-nose-tests
       image: python:3.9-slim
+      workingDir: $(workspaces.source.path)
       command: ["/bin/sh", "-c"]
       args:
         - |
