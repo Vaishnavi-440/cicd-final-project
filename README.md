@@ -1,3 +1,9 @@
+# DevOps Capstone
+
+![CI Build](https://github.com/Vaishnavi-440/cicd-final-project/actions/workflows/ci-build.yaml/badge.svg)
+
+## Project Overview
+This repository contains the microservice application for the DevOps Capstone project.
 # ci-cd-final-project
 
 This repository contains the CI/CD pipeline implementation for the final project.
