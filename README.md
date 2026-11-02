@@ -1,6 +1,6 @@
-# Developing AI Applications with Python and Flask - Products Microservice
+# ci-cd-final-project
 
-This repository contains the Product microservice application built using Python, Flask, and SQLAlchemy. It includes unit tests, BDD testing scenarios with Behave, CI/CD pipeline automation via GitHub Actions, and Tekton pipeline configuration for deployment to OpenShift.
+This repository contains the CI/CD pipeline implementation for the final project.
 
 ## Features
 - **CRUD Operations**: Create, Read, Update, Delete, and List Products.
